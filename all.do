@@ -1,3 +1,3 @@
 #!bash
 
-redo-ifchange cterm.o
+redo-ifchange obj/cterm.o main.exe

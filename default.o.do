@@ -6,5 +6,5 @@ TNAME=$3
 CC=gcc
 CFLAGS=
 
-redo-ifchange ${BNAME}.c ${BNAME}.h
-$CC $CLFAGS $LDFLAGS -o ${TNAME} -c ../${BNAME}.c
+redo-ifchange ../src/${BNAME}.c ../${BNAME}.h
+$CC $CFLAGS $LDFLAGS -o ${TNAME} -c ../src/${BNAME}.c

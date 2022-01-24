@@ -1,5 +1,6 @@
 
 #include <stdio.h>
+#include "../cterm.h"
 
 static void PrintfTable(const char *str_format, int start, int end, int cols)
 {
@@ -24,7 +25,7 @@ static void PrintfTable(const char *str_format, int start, int end, int cols)
 void CT_PrintTable(void)
 {
     printf("Table:\n");
-    PrintfTable(" \e[%dm%3d\e[0m", 0, 107, 10);
+    PrintfTable(" \e[%dm%3d" CT_RESET, 0, 107, 10);
 }
 
 /// \brief Prints test table for all codes
@@ -32,16 +33,16 @@ void CT_PrintTable(void)
 void CT_PrintTableRGB(void)
 {
     printf("TableRGB Foreground:\n");
-    PrintfTable(" \e[38;5;%dm%3d\e[0m", 0,   15,  8);
-    PrintfTable(" \e[38;5;%dm%3d\e[0m", 16,  231, 6);
-    PrintfTable(" \e[38;5;%dm%3d\e[0m", 232, 239, 8);
-    PrintfTable(" \e[38;5;%dm%3d\e[0m", 240, 255, 8);
+    PrintfTable(" \e[38;5;%dm%3d" CT_RESET, 0,   15,  8);
+    PrintfTable(" \e[38;5;%dm%3d" CT_RESET, 16,  231, 6);
+    PrintfTable(" \e[38;5;%dm%3d" CT_RESET, 232, 239, 8);
+    PrintfTable(" \e[38;5;%dm%3d" CT_RESET, 240, 255, 8);
 
     printf("TableRGB Background:\n");
-    PrintfTable(" \e[30;48;5;%dm%3d\e[0m", 0,   15,  8);
-    PrintfTable(" \e[30;48;5;%dm%3d\e[0m", 16,  231, 6);
-    PrintfTable(" \e[30;48;5;%dm%3d\e[0m", 232, 239, 8);
-    PrintfTable(" \e[30;48;5;%dm%3d\e[0m", 240, 255, 8);
+    PrintfTable(" \e[30;48;5;%dm%3d" CT_RESET, 0,   15,  8);
+    PrintfTable(" \e[30;48;5;%dm%3d" CT_RESET, 16,  231, 6);
+    PrintfTable(" \e[30;48;5;%dm%3d" CT_RESET, 232, 239, 8);
+    PrintfTable(" \e[30;48;5;%dm%3d" CT_RESET, 240, 255, 8);
 }
 
 ///
